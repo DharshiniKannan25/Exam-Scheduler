@@ -1,0 +1,105 @@
+[
+
+{"subject": "Tamil", "date": "2025-10-01", "time": "9:00 AM", "venue": "Room COM101",
+"department": "All"},
+{"subject": "English", "date": "2025-10-02", "time": "9:00 AM", "venue": "Room COM102",
+"department": "All"},
+{"subject": "C Programming", "date": "2025-10-03", "time": "10:00 AM", "venue": "Lab
+COM103", "department": "All"},
+{"subject": "Python Programming", "date": "2025-10-04", "time": "10:00 AM", "venue": "Lab
+COM104", "department": "All"},
+{"subject": "Environmental Science", "date": "2025-10-05", "time": "11:00 AM", "venue":
+"Room COM105", "department": "All"},
+{"subject": "Thermodynamics", "date": "2025-10-06", "time": "10:00 AM", "venue": "Room
+ME101", "department": "Mechanical"},
+{"subject": "Fluid Mechanics", "date": "2025-10-07", "time": "2:00 PM", "venue": "Room
+ME102", "department": "Mechanical"},
+{"subject": "Machine Design", "date": "2025-10-08", "time": "9:00 AM", "venue": "Room
+ME103", "department": "Mechanical"},
+{"subject": "Manufacturing Technology", "date": "2025-10-09", "time": "11:00 AM", "venue":
+"Lab ME104", "department": "Mechanical"},
+{"subject": "Automobile Engineering", "date": "2025-10-10", "time": "1:00 PM", "venue":
+"Room ME105", "department": "Mechanical"},
+{"subject": "Heat Transfer", "date": "2025-10-11", "time": "9:00 AM", "venue": "Room ME106",
+"department": "Mechanical"},
+{"subject": "Dynamics of Machines", "date": "2025-10-12", "time": "10:00 AM", "venue":
+"Room ME107", "department": "Mechanical"},
+{"subject": "Metrology and Quality Control", "date": "2025-10-13", "time": "11:00 AM",
+"venue": "Lab ME108", "department": "Mechanical"},
+//add 10 more papers on Mechanical
+{"subject": "Structural Analysis", "date": "2025-10-06", "time": "10:00 AM", "venue": "Room
+CE101", "department": "Civil"},
+{"subject": "Surveying", "date": "2025-10-07", "time": "2:00 PM", "venue": "Room CE102",
+"department": "Civil"},
+
+{"subject": "Concrete Technology", "date": "2025-10-08", "time": "9:00 AM", "venue": "Room
+CE103", "department": "Civil"},
+{"subject": "Transportation Engineering", "date": "2025-10-09", "time": "11:00 AM", "venue":
+"Room CE104", "department": "Civil"},
+{"subject": "Environmental Engineering", "date": "2025-10-10", "time": "1:00 PM", "venue":
+"Room CE105", "department": "Civil"},
+{"subject": "Geotechnical Engineering", "date": "2025-10-11", "time": "9:00 AM", "venue":
+"Room CE106", "department": "Civil"},
+{"subject": "Water Resources Engineering", "date": "2025-10-12", "time": "10:00 AM",
+"venue": "Room CE107", "department": "Civil"},
+{"subject": "Structural Design", "date": "2025-10-13", "time": "11:00 AM", "venue": "Room
+CE108", "department": "Civil"},
+//add 10 more papers on civil
+{"subject": "Data Structures", "date": "2025-10-06", "time": "10:00 AM", "venue": "Lab
+CS101", "department": "CSE"},
+{"subject": "Operating Systems", "date": "2025-10-07", "time": "2:00 PM", "venue": "Room
+CS102", "department": "CSE"},
+{"subject": "Computer Networks", "date": "2025-10-08", "time": "9:00 AM", "venue": "Room
+CS103", "department": "CSE"},
+{"subject": "Database Systems", "date": "2025-10-09", "time": "11:00 AM", "venue": "Lab
+CS104", "department": "CSE"},
+{"subject": "Software Engineering", "date": "2025-10-10", "time": "1:00 PM", "venue": "Room
+CS105", "department": "CSE"},
+{"subject": "Algorithms", "date": "2025-10-11", "time": "9:00 AM", "venue": "Room CS106",
+"department": "CSE"},
+{"subject": "Compiler Design", "date": "2025-10-12", "time": "10:00 AM", "venue": "Room
+CS107", "department": "CSE"},
+{"subject": "Artificial Intelligence", "date": "2025-10-13", "time": "11:00 AM", "venue": "Room
+CS108", "department": "CSE"},
+//add 10 more papers on CSE
+
+{"subject": "Digital Electronics", "date": "2025-10-06", "time": "10:00 AM", "venue": "Room
+EC101", "department": "ECE"},
+{"subject": "Signals and Systems", "date": "2025-10-07", "time": "2:00 PM", "venue": "Room
+EC102", "department": "ECE"},
+{"subject": "VLSI Design", "date": "2025-10-08", "time": "9:00 AM", "venue": "Lab EC103",
+"department": "ECE"},
+{"subject": "Communication Systems", "date": "2025-10-09", "time": "11:00 AM", "venue":
+"Room EC104", "department": "ECE"},
+{"subject": "Embedded Systems", "date": "2025-10-10", "time": "1:00 PM", "venue": "Lab
+EC105", "department": "ECE"},
+{"subject": "Microwave Engineering", "date": "2025-10-11", "time": "9:00 AM", "venue":
+"Room EC106", "department": "ECE"},
+{"subject": "Digital Signal Processing", "date": "2025-10-12", "time": "10:00 AM", "venue":
+"Lab EC107", "department": "ECE"},
+{"subject": "Control Systems", "date": "2025-10-13", "time": "11:00 AM", "venue": "Room
+EC108", "department": "ECE"},
+{"subject": "Antenna Theory", "date": "2025-10-14", "time": "2:00 PM", "venue": "Room
+EC109", "department": "ECE"},
+//add 10 more papers on ECE
+{"subject": "Electrical Machines", "date": "2025-10-06", "time": "10:00 AM", "venue": "Room
+EE101", "department": "EEE"},
+{"subject": "Power Systems", "date": "2025-10-07", "time": "2:00 PM", "venue": "Room
+EE102", "department": "EEE"},
+{"subject": "Control Systems", "date": "2025-10-08", "time": "9:00 AM", "venue": "Room
+EE103", "department": "EEE"},
+{"subject": "Power Electronics", "date": "2025-10-09", "time": "11:00 AM", "venue": "Room
+EE104", "department": "EEE"},
+{"subject": "Electrical Measurements", "date": "2025-10-10", "time": "1:00 PM", "venue": "Lab
+EE105", "department": "EEE"},
+{"subject": "Renewable Energy", "date": "2025-10-11", "time": "9:00 AM", "venue": "Room
+EE106", "department": "EEE"},
+
+{"subject": "Power System Protection", "date": "2025-10-12", "time": "10:00 AM", "venue":
+"Room EE107", "department": "EEE"},
+{"subject": "Electrical Machines-II", "date": "2025-10-13", "time": "11:00 AM", "venue": "Room
+EE108", "department": "EEE"},
+{"subject": "Microcontrollers", "date": "2025-10-14", "time": "2:00 PM", "venue": "Lab EE109",
+"department": "EEE"},
+//add 10 more papers on EEE
+]

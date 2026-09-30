@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Scheduler - October 2025</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+rel="stylesheet">
+<style>
+body {
+background: #f5f7fa;
+font-family: 'Roboto', Arial, sans-serif;
+margin: 0;
+padding: 0;
+min-height: 100vh;
+color: #333;
+}
+.container {
+max-width: 1000px;
+margin: 40px auto;
+padding: 30px 20px;
+background: #fff;
+border-radius: 18px;
+box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+
+}
+h1 {
+text-align: center;
+font-size: 2.2em;
+color: #1e3799;
+margin-bottom: 26px;
+font-weight: 700;
+letter-spacing: 0.5px;
+}
+.filter-box {
+display: flex;
+justify-content: space-between;
+gap: 12px;
+margin-bottom: 22px;
+flex-wrap: wrap;
+}
+.filter-box input, .filter-box select {
+flex: 1;
+padding: 10px 16px;
+border: 1px solid #1e3799;
+border-radius: 7px;
+font-size: 1em;
+margin-bottom: 6px;
+}
+table {
+width: 100%;
+
+border-collapse: collapse;
+background: #fff;
+box-shadow: 0 2px 8px rgba(30,55,153,0.08);
+}
+thead {
+background: #1e3799;
+color: #fff;
+}
+th, td {
+padding: 13px 9px;
+text-align: left;
+border-bottom: 1px solid #eee;
+font-size: 1em;
+}
+th {
+font-weight: 700;
+letter-spacing: 0.2px;
+}
+tbody tr:hover {
+background: #f6f6fa;
+}
+.dept-label {
+font-weight: 700;
+font-size:1.1em;
+background: #caf0f8;
+color: #1e3799;
+
+text-align:left;
+}
+.no-results {
+text-align: center;
+padding: 30px 0;
+font-size: 1.18em;
+color: #dc3545;
+}
+@media (max-width: 700px) {
+.container {
+padding: 8px;
+}
+th, td {
+font-size: 0.95em;
+padding: 8px 4px;
+}
+h1 {
+font-size: 1.4em;
+}
+.filter-box input, .filter-box select {
+font-size:1em;
+padding:7px 8px;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Exam Timetable: October 2025</h1>
+<div class="filter-box">
+<input type="text" id="searchSubject" placeholder="Search by Subject">
+<input type="date" id="searchDate" min="2025-10-01" max="2025-10-24">
+<select id="searchDept">
+<option value="">All Departments</option>
+<option value="All">All</option>
+<option value="Mechanical">Mechanical</option>
+<option value="Civil">Civil</option>
+<option value="CSE">CSE</option>
+<option value="ECE">ECE</option>
+<option value="EEE">EEE</option>
+</select>
+<button id="clearBtn">Clear</button>
+</div>
+<div id="timetable"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function loadScheduler() {
+$.ajax({
+url: 'schedule.json',
+method: 'GET',
+dataType: 'json',
+
+success: function(data) {
+window.examData = data;
+renderTimetable(data);
+},
+error: function() {
+$('#timetable').html('<div class="no-results">Unable to load timetable. Please check your
+connection or JSON file presence!</div>');
+}
+});
+}
+function renderTimetable(data) {
+if (!Array.isArray(data) || data.length === 0) {
+$('#timetable').html('<div class="no-results">No exam schedules available.</div>');
+return;
+}
+let grouped = {};
+data.forEach(item => {
+if (!grouped[item.department]) {
+grouped[item.department] = [];
+}
+grouped[item.department].push(item);
+});
+
+let html = '';
+Object.keys(grouped).sort().forEach(dept => {
+html += `<table><thead>
+
+<tr><th colspan="5" class="dept-label">${dept === 'All' ? 'Common for All Departments' :
+dept + ' Department'}</th></tr>
+<tr>
+<th>Subject</th>
+<th>Date</th>
+<th>Time</th>
+<th>Venue</th>
+<th>Department</th>
+</tr>
+</thead><tbody>`;
+grouped[dept].forEach(item => {
+html += `<tr>
+<td>${item.subject}</td>
+<td>${item.date}</td>
+<td>${item.time}</td>
+<td>${item.venue}</td>
+<td>${item.department}</td>
+</tr>`;
+});
+html += '</tbody></table><br>';
+});
+$('#timetable').html(html);
+}
+function filterScheduler() {
+let subjectVal = $('#searchSubject').val().toLowerCase();
+let dateVal = $('#searchDate').val();
+
+let deptVal = $('#searchDept').val();
+let filtered = window.examData.filter(item => {
+let matchSubject = !subjectVal || item.subject.toLowerCase().includes(subjectVal);
+let matchDate = !dateVal || item.date === dateVal;
+let matchDept = !deptVal || item.department === deptVal;
+return matchSubject && matchDate && matchDept;
+});
+renderTimetable(filtered);
+}
+$(document).ready(function() {
+loadScheduler();
+$('#searchSubject, #searchDate, #searchDept').on('input change', filterScheduler);
+$('#clearBtn').on('click', function() {
+$('#searchSubject').val('');
+$('#searchDate').val('');
+$('#searchDept').val('');
+renderTimetable(window.examData);
+});
+});
+</script>
+</body>
+</html>
